@@ -17,10 +17,6 @@ import backtype.storm.tuple.Fields
     final String TOPOLOGY_NAME="word-count-topology"
 
 
-
-
-
-
 TopologyBuilder topologyBuilder=new TopologyBuilder()
 topologyBuilder.setSpout(SENTENCE_SPOUT_ID, new SentenceSpout())
 topologyBuilder.setBolt(SPLIT_BOLT_ID,new SplitSentenceBolt()).setNumTasks(2)
@@ -30,7 +26,7 @@ topologyBuilder.setBolt(COUNT_BOLT_ID, new WordCountBolt(),2)
 topologyBuilder.setBolt(REPORT_BOLT_ID,new PrinterBolt())
             .globalGrouping(COUNT_BOLT_ID)
 Config config=new Config()
-config.setNumWorkers(2)
+
 
 if (args != null && args.length > 0) {
 

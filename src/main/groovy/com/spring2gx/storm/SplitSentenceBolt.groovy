@@ -30,9 +30,13 @@ class SplitSentenceBolt extends BaseRichBolt {
     // TODO: optimize execute method
     @Override
     void execute(backtype.storm.tuple.Tuple tuple) {
+        String sentence=tuple.getStringByField("sentence")
+        sentence.split().each { word ->
+
+            collector.emit(new Values(word))
 
 
-
+        }
     }
 
 
