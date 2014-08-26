@@ -1,10 +1,11 @@
-package com.spring2gx.storm.trident
+package com.spring2gx.storm
 
 import backtype.storm.Config
 import backtype.storm.LocalCluster
 import backtype.storm.StormSubmitter
 import backtype.storm.tuple.Fields
 import backtype.storm.tuple.Values
+import com.spring2gx.storm.trident.SplitSentence
 import storm.trident.TridentTopology
 import storm.trident.operation.builtin.Count
 import storm.trident.operation.builtin.Debug

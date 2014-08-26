@@ -35,7 +35,7 @@ if (args != null && args.length > 0) {
 
     LocalCluster cluster = new LocalCluster()
     cluster.submitTopology(TOPOLOGY_NAME, config, topologyBuilder.createTopology())
-    Thread.sleep(8000)
+    Thread.sleep(10000)
     cluster.killTopology(TOPOLOGY_NAME)
     cluster.shutdown()
 }
